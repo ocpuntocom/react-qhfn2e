@@ -4,8 +4,8 @@ import './style.css';
 
 
 function Header() {
-  const clock = Date().toLocaleString();
-  return <h1 className="orange"> Hello {clock} </h1> ;
+  const reloj = Date().toLocaleString();
+  return <h1 className="orange"> Hello {reloj} </h1> ;
 }
 function Page() {
   return ( 
