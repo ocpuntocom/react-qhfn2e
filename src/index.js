@@ -1,13 +1,27 @@
-import React, { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './style.css';
 
-import App from './App';
 
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+function Header() {
+  const clock = Date().toLocaleString();
+  return <h1 className="orange"> Hello {clock} </h1> ;
+}
+function Page() {
+  return ( 
+    <>
+    <Header /> 
+    <p> React es fino</p>
+    <p>Mi sankalpa</p>
+    </>
+    );
+}
 
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+
+
+
+const rootEl = document.querySelector('#root');
+const root = ReactDOM.createRoot(rootEl);
+setInterval(function(){
+  root.render(Page());
+},1000);
